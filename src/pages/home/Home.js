@@ -43,7 +43,6 @@ const Home = () => {
         <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
             <FlatList
                 data={[1, 1, 1]}
-                keyExtractor={(item) => item.id}
                 showsVerticalScrollIndicator={false}
                 renderItem={({ index }) => {
                     if (index == 0) {
@@ -108,7 +107,7 @@ const Home = () => {
                                 </View>
                                 {data.map((item) => {
                                     return (
-                                        <View style={styles.card}>
+                                        <View key={item.id} style={styles.card}>
                                             <Image source={{ uri: item.image }} style={styles.image} />
                                             <View style={styles.cardContent}>
                                                 <Text style={styles.category}>{item.category}</Text>

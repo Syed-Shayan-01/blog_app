@@ -5,21 +5,10 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Home from '../pages/home/Home';
 import Explore from '../pages/explore/Explore';
 import BookmarkPage from '../pages/bookMark/BookMark';
+import ProfileScreen from '../pages/profile/Profile';
 
 const Tab = createBottomTabNavigator();
 const { width, height } = Dimensions.get('window');
-
-const BookmarkScreen = () => (
-    <View style={styles.screenContainer}>
-        <Text>Bookmark Screen</Text>
-    </View>
-);
-
-const ProfileScreen = () => (
-    <View style={styles.screenContainer}>
-        <Text>Profile Screen</Text>
-    </View>
-);
 
 const AnimatedTabIcon = ({ name, focused }) => {
     const scaleValue = useRef(new Animated.Value(1)).current;
@@ -34,7 +23,7 @@ const AnimatedTabIcon = ({ name, focused }) => {
 
     return (
         <Animated.View style={{ transform: [{ scale: scaleValue }] }}>
-            <MaterialIcons name={name} size={PixelRatio.getFontScale() * 26} color={focused ? '#0975b0' : '#666666'} />
+            <MaterialIcons name={name} size={PixelRatio.getFontScale() * 26} color={focused ? '#0b86e7' : '#666666'} />
         </Animated.View>
     );
 };
@@ -86,7 +75,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     tabBar: {
-        height: height * 0.08,
+        height: 70,
         borderTopWidth: 1,
         borderTopColor: '#e0e0e0',
         paddingBottom: Platform.OS === 'ios' ? height * 0.02 : 10,

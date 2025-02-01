@@ -81,8 +81,8 @@ const styles = StyleSheet.create({
     },
     channelName: {
         fontSize: 14,
-        color: '#555',
-        fontStyle: 'italic',
+        color: '#333',
+        fontWeight: '500'
     },
     category: {
         fontSize: 12,
