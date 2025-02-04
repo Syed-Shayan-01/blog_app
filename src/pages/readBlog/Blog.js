@@ -7,7 +7,6 @@ const { width, height } = Dimensions.get('window');
 const Blog = () => {
     return (
         <View style={styles.container}>
-            {/* Navbar and Background Image */}
             <View style={styles.headerContainer}>
                 <Navbar name1={'arrow-back-ios-new'} name2={'bookmark-outline'} />
                 <Image
@@ -46,22 +45,20 @@ export default Blog;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ffffff',
-    },
-    headerContainer: {
-        position: 'relative',
     },
     image: {
         width: width,
         height: height * 0.5,
         resizeMode: 'cover',
+        position: 'absolute',
+        zIndex: -1
     },
     modalContainer: {
         flex: 1,
         backgroundColor: '#ffffff',
         borderTopLeftRadius: 25,
         borderTopRightRadius: 25,
-        marginTop: -25, // Pull the modal slightly over the image
+        marginTop: height * 0.35, // Pull the modal slightly over the image
         padding: 20,
     },
     channelContainer: {
