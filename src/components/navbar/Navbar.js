@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingVertical: height * 0.025,
         paddingHorizontal: width * 0.05,
-        backgroundColor: '#fff'
     },
     navbarIcon1: {
         backgroundColor: '#dfdfe0',
