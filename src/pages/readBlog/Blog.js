@@ -9,12 +9,21 @@ const Blog = () => {
         <View style={styles.container}>
             <View style={styles.headerContainer}>
                 <Navbar name1={'arrow-back-ios-new'} name2={'bookmark-outline'} />
+                <View style={styles.overlay}>
+                    <Text style={styles.carouselCategoryText}>
+                        Sports
+                    </Text>
+                    <View style={styles.contentContainer}>
+                        <Text style={styles.blogDescription} numberOfLines={2}>
+                            Alexandra remove their shoes and cleaning wears dusing race
+                        </Text>
+                    </View>
+                </View>
                 <Image
                     source={{ uri: `https://images.unsplash.com/photo-1585511543349-172d6c653ce7` }}
                     style={styles.image}
                 />
             </View>
-
             {/* Scrollable Modal Section */}
             <View style={styles.modalContainer}>
                 <View style={styles.channelContainer}>
@@ -52,6 +61,41 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
         position: 'absolute',
         zIndex: -1
+    },
+    overlay: {
+        position: 'absolute',
+        top: height * 0.28,
+        left: width * 0,
+        right: width * 0,
+        backgroundColor: 'rgba(0,0,0,0.1)',
+        paddingHorizontal: width * 0.05,
+        textAlign: 'left' ,
+        width: width * 0.9
+    },
+    contentContainer: {
+        marginBottom: height * 0.023,
+    },
+    carouselCategoryText: {
+        alignSelf: 'flex-start',
+        color: 'white',
+        backgroundColor: '#0b86e7',
+        paddingHorizontal: width * 0.05,
+        paddingVertical: height * 0.011,
+        borderRadius: 50,
+        letterSpacing: 1,
+        fontSize: 14,
+        marginTop: height * 0.02,
+    },
+    blogDescription: {
+        color: 'white',
+        fontSize: 24,
+        letterSpacing: 1,
+        fontWeight: '600',
+        marginTop: height * 0.009,
+    },
+    carouselImage: {
+        width: '100%',
+        height: '100%',
     },
     modalContainer: {
         flex: 1,
