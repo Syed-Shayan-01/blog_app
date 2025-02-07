@@ -10,10 +10,11 @@ const bookmarks = [
 const BookmarkPage = () => {
     return (
         <>
-            <View>
-                <Navbar name1={'arrow-back-ios-new'} />
-            </View>
+         <View style={{backgroundColor: '#fff'}}>
+            <Navbar name1={'arrow-back-ios-new'} />
+        </View>
             <View style={styles.container}>
+
                 <FlatList
                     data={bookmarks}
                     keyExtractor={(item) => item.id}
@@ -41,15 +42,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         padding: 20,
-    },
-    header: {
-        fontSize: 26,
-        fontWeight: 'bold',
-        marginBottom: 20,
-        textAlign: 'center',
-        color: '#222',
-        textTransform: 'uppercase',
-        letterSpacing: 1,
     },
     bookmarkItem: {
         flexDirection: 'row',
