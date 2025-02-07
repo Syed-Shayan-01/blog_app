@@ -6,7 +6,7 @@ const ProfileScreen = () => {
     return (
         <ScrollView style={styles.container}>
             <View>
-                <Navbar name1={'arrow-back-ios-new'} />
+                <Navbar name1={'arrow-back-ios-new'}  />
             </View>
             <View style={styles.header}>
                 <View style={styles.profileImageContainer}>

@@ -1,17 +1,18 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import MIcon from 'react-native-vector-icons/MaterialIcons';
 import { Dimensions } from 'react-native';
-import { Link } from '@react-navigation/native';
+import { Link, useNavigation, useRoute } from '@react-navigation/native';
 const { width, height } = Dimensions.get('window');
 
-const Navbar = ({ name1, name2, name3, LinkText }) => {
+const Navbar = ({ name1, name2, name3 }) => {
+    const navigation = useNavigation();
     return (
         <>
             <View style={styles.navbarContainer}>
-                <Link to={LinkText} style={styles.navbarIcon1}>
+                <TouchableOpacity onPress={() => navigation.goBack()} style={styles.navbarIcon1}>
                     <MIcon name={name1} size={25} color="black" />
-                </Link>
+                </TouchableOpacity>
                 <View style={styles.navbarIcon2}>
                     {name2 && <Text style={{
                         backgroundColor: '#dfdfe0',
