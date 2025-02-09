@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, Image, Dimensions, StyleSheet, ScrollView } from 'react-native';
 import Navbar from '../../components/navbar/Navbar'; // Assuming Navbar is your custom component
-
+import { useRoute } from '@react-navigation/native'
 const { width, height } = Dimensions.get('window');
 
 const Blog = () => {
+    const route = useRoute();
     return (
         <View style={styles.container}>
             <View style={styles.headerContainer}>
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
         right: width * 0,
         backgroundColor: 'rgba(0,0,0,0.1)',
         paddingHorizontal: width * 0.05,
-        textAlign: 'left' ,
+        textAlign: 'left',
         width: width * 0.9
     },
     contentContainer: {

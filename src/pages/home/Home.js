@@ -12,48 +12,13 @@ import {
 // Import custom components
 import Navbar from '../../components/navbar/Navbar';
 import Carousel from '../../components/carousel/Carousel';
-
+import { blogs } from '../../../utils/data/blogs';
+import { useNavigation } from '@react-navigation/native'
 // Get device dimensions for responsive styling
 const { width, height } = Dimensions.get('window');
 
 const Home = () => {
-  // Sample data for Popular News cards
-  const data = [
-    {
-      id: 1,
-      image: 'https://images.unsplash.com/photo-1737602902540-6211385c19bc',
-      category: 'Sports',
-      title: 'What Training Volleyball Players Need?',
-      author: 'McKindney',
-      date: 'Feb 27, 2023',
-    },
-    {
-      id: 2,
-      image: 'https://images.unsplash.com/photo-1737602902540-6211385c19bc',
-      category: 'Sports',
-      title: 'Training Do Volleyball Players Need?',
-      author: 'McKindney',
-      date: 'Feb 27, 2023',
-    },
-    {
-      id: 3,
-      image: 'https://images.unsplash.com/photo-1737602902540-6211385c19bc',
-      category: 'Sports',
-      title: 'What Training Do Players Need?',
-      author: 'McKindney',
-      date: 'Feb 27, 2023',
-    },
-    {
-      id: 4,
-      image: 'https://images.unsplash.com/photo-1737602902540-6211385c19bc',
-      category: 'Sports',
-      title: 'What Do Volleyball Players Need?',
-      author: 'McKindney',
-      date: 'Feb 27, 2023',
-    },
-    // Add more items as needed
-  ];
-
+  const navigation = useNavigation();
   // Render function for FlatList items based on their index
   const renderItem = ({ index }) => {
     // Index 0: Render the Navbar at the top
@@ -91,15 +56,17 @@ const Home = () => {
             <Text style={styles.headerLink}>View All</Text>
           </View>
           {/* Map over the news data to create individual cards */}
-          {data.map(item => (
+          {blogs.slice(0, 5).map(item => (
             <View key={item.id} style={styles.card}>
-              <Image source={{ uri: item.image }} style={styles.image} />
+              <Image source={{ uri: item.blogImage }} style={styles.image} />
               <View style={styles.cardContent}>
                 <Text style={styles.category}>{item.category}</Text>
-                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.title} numberOfLines={2} onPress={() => {
+                  navigation.navigate('Blog', { item })
+                }} >{item.title}</Text>
                 <View style={styles.footer}>
-                  <Text style={styles.author}>{item.author}</Text>
-                  <Text style={styles.date}>• {item.date}</Text>
+                  <Text style={styles.author}>Syed Shayan</Text>
+                  <Text style={styles.date}>• Feb.27.2025</Text>
                 </View>
               </View>
             </View>

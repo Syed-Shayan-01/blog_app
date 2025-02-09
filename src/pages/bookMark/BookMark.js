@@ -1,26 +1,23 @@
 import React from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image, Dimensions } from 'react-native';
 import Navbar from '../../components/navbar/Navbar';
+import { blogs } from '../../../utils/data/blogs';
+const { width, height } = Dimensions.get('window');
 
-const bookmarks = [
-    { id: '1', title: 'React Native Best Practices', channel: 'Tech Blog', category: 'Development', image: 'https://plus.unsplash.com/premium_photo-1688572454849-4348982edf7d' },
-    { id: '2', title: 'State Management in React Native', channel: 'Code Academy', category: 'Programming', image: 'https://plus.unsplash.com/premium_photo-1688572454849-4348982edf7d' },
-    { id: '3', title: 'How to Optimize React Native Performance', channel: 'Mobile Dev Hub', category: 'Optimization', image: 'https://plus.unsplash.com/premium_photo-1688572454849-4348982edf7d' },
-];
 const BookmarkPage = () => {
     return (
         <>
-         <View style={{backgroundColor: '#fff'}}>
-            <Navbar name1={'arrow-back-ios-new'} />
-        </View>
+            <View style={{ backgroundColor: '#fff' }}>
+                <Navbar name1={'arrow-back-ios-new'} />
+            </View>
             <View style={styles.container}>
 
                 <FlatList
-                    data={bookmarks}
+                    data={blogs}
                     keyExtractor={(item) => item.id}
                     renderItem={({ item }) => (
                         <TouchableOpacity activeOpacity={0.8} style={styles.bookmarkItem}>
-                            <Image source={{ uri: item.image }} style={styles.bookmarkImage} />
+                            <Image source={{ uri: item.blogImage }} style={styles.bookmarkImage} />
                             <View style={styles.textContainer}>
                                 <Text style={styles.bookmarkTitle}>{item.title}</Text>
                                 <Text style={styles.channelName}>{item.channel}</Text>
@@ -46,11 +43,11 @@ const styles = StyleSheet.create({
     bookmarkItem: {
         flexDirection: 'row',
         alignItems: 'center',
-        padding: 15,
+        padding: Math.max(width, height) * 0.022,
         backgroundColor: '#f9f9f9',
         borderRadius: 15,
-        marginBottom: 10,
-        elevation: 5,
+        marginBottom: height * 0.01,
+        elevation: 2,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 0.3,
