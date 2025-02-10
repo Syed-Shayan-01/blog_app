@@ -11,7 +11,7 @@ const ProfileScreen = () => {
             <View style={styles.header}>
                 <View style={styles.profileImageContainer}>
                     <Image
-                        source={{ uri: 'https://plus.unsplash.com/premium_photo-1688572454849-4348982edf7d' }}
+                        source={{ uri: 'https://images.unsplash.com/photo-1536164261511-3a17e671d380' }}
                         style={styles.profileImage}
                     />
                     <TouchableOpacity style={styles.editImageButton}>

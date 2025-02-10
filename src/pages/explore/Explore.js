@@ -1,28 +1,20 @@
 import { Dimensions, FlatList, Image, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
 import Navbar from '../../components/navbar/Navbar';
+import { blogs } from '../../../utils/data/blogs';
 
 const { width, height } = Dimensions.get('window');
 
 const Explore = () => {
-    // Sample data for news articles
-    const data = [
-        { id: 1, image: 'https://plus.unsplash.com/premium_photo-1734549547922-533a21843173', category: 'Sports', title: 'What Training Volleyball Players Need?', author: 'McKindney', date: 'Feb 27, 2023' },
-        { id: 2, image: 'https://plus.unsplash.com/premium_photo-1734549547922-533a21843173', category: 'Entertainment', title: 'Top 10 Movies to Watch in 2023', author: 'Jane Doe', date: 'Mar 12, 2023' },
-        { id: 3, image: 'https://plus.unsplash.com/premium_photo-1734549547922-533a21843173', category: 'Health', title: '5 Tips for a Healthier Lifestyle', author: 'John Smith', date: 'Jan 5, 2023' },
-        { id: 4, image: 'https://plus.unsplash.com/premium_photo-1734549547922-533a21843173', category: 'Technology', title: 'Latest Innovations in AI', author: 'Sarah Lee', date: 'Dec 15, 2023' },
-        { id: 5, image: 'https://plus.unsplash.com/premium_photo-1734549547922-533a21843173', category: 'Travel', title: 'Top 5 Destinations to Visit in 2023', author: 'Alice Brown', date: 'Nov 3, 2023' },
-    ];
-
     // Renders each news card
     const renderItem = ({ item }) => (
         <View key={item.id} style={styles.card}>
-            <Image source={{ uri: item.image }} style={styles.image} />
+            <Image source={{ uri: item.blogImage }} style={styles.image} />
             <View style={styles.cardContent}>
                 <Text style={styles.category}>{item.category}</Text>
-                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.title} numberOfLines={2}>{item.title}</Text>
                 <View style={styles.footer}>
-                    <Text style={styles.author}>{item.author}</Text>
-                    <Text style={styles.date}>• {item.date}</Text>
+                    <Text style={styles.author}>CNN INDIA</Text>
+                    <Text style={styles.date}>• feb.27.2025</Text>
                 </View>
             </View>
         </View>
@@ -45,7 +37,7 @@ const Explore = () => {
             {/* Horizontal Category List */}
             <SafeAreaView>
                 <FlatList
-                    data={data}
+                    data={blogs}
                     horizontal
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={(item) => item.id.toString()}
@@ -57,7 +49,7 @@ const Explore = () => {
 
             {/* News Articles List */}
             <FlatList
-                data={data}
+                data={blogs.slice(0,7)}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={renderItem}
                 showsVerticalScrollIndicator={false}

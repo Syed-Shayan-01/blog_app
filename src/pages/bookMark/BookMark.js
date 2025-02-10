@@ -19,8 +19,8 @@ const BookmarkPage = () => {
                         <TouchableOpacity activeOpacity={0.8} style={styles.bookmarkItem}>
                             <Image source={{ uri: item.blogImage }} style={styles.bookmarkImage} />
                             <View style={styles.textContainer}>
-                                <Text style={styles.bookmarkTitle}>{item.title}</Text>
-                                <Text style={styles.channelName}>{item.channel}</Text>
+                                <Text style={styles.bookmarkTitle} numberOfLines={1}>{item.title}</Text>
+                                <Text style={styles.channelName}>{'CNN Indonesia'}</Text>
                                 <Text style={styles.category}>{item.category}</Text>
                             </View>
                             <TouchableOpacity style={styles.iconContainer}>

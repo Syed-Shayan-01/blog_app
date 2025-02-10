@@ -16,7 +16,7 @@ const Blog = () => {
                     </Text>
                     <View style={styles.contentContainer}>
                         <Text style={styles.blogDescription} numberOfLines={2}>
-                            Alexandra remove their shoes and cleaning wears dusing race
+                           {route?.params?.item?.title}
                         </Text>
                     </View>
                 </View>
@@ -39,9 +39,7 @@ const Blog = () => {
                 <ScrollView style={styles.scrollContainer}>
                     <View style={styles.separator} />
                     <Text style={styles.content}>
-                        As a tech department, we're usually pretty good at spotting tech that's out of the ordinary. During time trials, we’re used to seeing new aero innovation, and while there are certainly aero tricks used in road stages, they are harder to spot. {'\n\n'}
-                        A case in point, throughout the Volta ao Algarve, Alexander Kristoff has been wearing an old discontinued time trial helmet, complete with the visor removed, in the road stages without much context. {'\n\n'}
-                        This setup has sparked curiosity among enthusiasts and fans. While the exact reason remains unclear, the tech behind such modifications could be key for the next big innovation in sports racing.
+                        {route?.params?.item?.description ?? "As a tech department, we're usually pretty good at spotting tech that's out of the ordinary. During time trials, we’re used to seeing new aero innovation, and while there are certainly aero tricks used in road stages, they are harder to spot. \n\nA case in point, throughout the Volta ao Algarve, Alexander Kristoff has been wearing an old discontinued time trial helmet, complete with the visor removed, in the road stages without much context.\n\nThis setup has sparked curiosity among enthusiasts and fans. While the exact reason remains unclear, the tech behind such modifications could be key for the next big innovation in sports racing. "}
                     </Text>
                 </ScrollView>
             </View>
